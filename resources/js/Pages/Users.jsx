@@ -20,12 +20,6 @@ export default function Users({ auth, users }) {
     // State to store the name of the registered user
     const [registeredName, setRegisteredName] = useState(null);
 
-    // Create a mapping of roles to IDs
-    // const roleMapping = {
-    //     admin: 1,
-    //     operator: 2,
-    // };
-
     // Define your handleRoleChange function
     const handleRoleChange = (event) => {
         setData({ ...data, role: event.target.value });
