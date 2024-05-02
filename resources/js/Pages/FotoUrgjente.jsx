@@ -29,7 +29,7 @@ export default function FotoUrgjente({ auth }) {
                     />
 
                     <div className="mb-4">
-                        <div class="flex justify-center items-center">
+                        <div className="flex justify-center items-center">
                             <img
                                 src="/storage/Photo/150.png"
                                 alt="Placeholder"

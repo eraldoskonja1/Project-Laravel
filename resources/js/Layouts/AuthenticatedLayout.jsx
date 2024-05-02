@@ -4,7 +4,7 @@ import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/react";
 
-export default function Authenticated({ user, header, children }) {
+export default function Authenticated({ user, header, children, auth }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
@@ -24,6 +24,7 @@ export default function Authenticated({ user, header, children }) {
                                     F.Urgjente
                                 </NavLink>
 
+                                {auth && auth.user && auth.user.role_id !== 2 && (
                                 <NavLink
                                     href={route("shperndarjeurgjente")}
                                     active={route().current(
@@ -33,6 +34,7 @@ export default function Authenticated({ user, header, children }) {
                                 >
                                     Sh.Urgjente
                                 </NavLink>
+                                )}
 
                                 <NavLink
                                     href={route("raporturgjent")}
@@ -48,6 +50,7 @@ export default function Authenticated({ user, header, children }) {
                                     F.Normale
                                 </NavLink>
 
+                                {auth && auth.user && auth.user.role_id !== 2 && (
                                 <NavLink
                                     href={route("shperndarjenormale")}
                                     active={route().current(
@@ -56,6 +59,7 @@ export default function Authenticated({ user, header, children }) {
                                 >
                                     Sh.Normale
                                 </NavLink>
+                                )}
 
                                 <NavLink
                                     href={route("raportnormal")}
@@ -71,6 +75,7 @@ export default function Authenticated({ user, header, children }) {
                                     F.Ndryshe
                                 </NavLink>
 
+                                {auth && auth.user && auth.user.role_id !== 2 && (
                                 <NavLink
                                     href={route("shperndarjendryshe")}
                                     active={route().current(
@@ -79,6 +84,7 @@ export default function Authenticated({ user, header, children }) {
                                 >
                                     Sh.Ndryshe
                                 </NavLink>
+                                )}
 
                                 <NavLink
                                     href={route("fotorikontroll")}
@@ -87,6 +93,7 @@ export default function Authenticated({ user, header, children }) {
                                     F.Rikontroll
                                 </NavLink>
 
+                                {auth && auth.user && auth.user.role_id !== 2 && (
                                 <NavLink
                                     href={route("shperndarjerikontroll")}
                                     active={route().current(
@@ -95,13 +102,16 @@ export default function Authenticated({ user, header, children }) {
                                 >
                                     Sh.Rikontroll
                                 </NavLink>
+                                )}
 
-                                <NavLink
-                                    href={route("users")}
-                                    active={route().current("users")}
-                                >
-                                    Users
-                                </NavLink>
+                                {auth && auth.user && auth.user.role_id !== 2 && (
+                                    <NavLink
+                                        href={route("users")}
+                                        active={route().current("users")}
+                                    >
+                                        Users
+                                    </NavLink>
+                                )}
                             </div>
                         </div>
 

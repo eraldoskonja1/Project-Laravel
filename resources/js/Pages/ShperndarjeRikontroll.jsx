@@ -1,8 +1,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
-import React, { useState, useEffect } from "react";
-import { Inertia } from "@inertiajs/inertia";
-
+import React, { useState } from "react";
 
 export default function ShperndarjeRikontroll({ auth, users }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -14,13 +12,6 @@ export default function ShperndarjeRikontroll({ auth, users }) {
         { id: 5, name: "Sam", age: 40, city: "San Francisco" }
       
     ]); 
-
-    useEffect(() => {
-        console.log("auth");
-        if (auth.user && auth.user.role_id === 2) {
-            return Inertia.visit("/fotourgjente");
-        }
-    }, [auth]);
    
     // // Function to toggle the dropdown open/closed
     const toggleDropdown = () => {

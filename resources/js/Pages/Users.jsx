@@ -6,7 +6,7 @@ import InputLabel from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm, router } from "@inertiajs/react";
-import { Inertia } from "@inertiajs/inertia";
+
 
 export default function Users({ auth, users }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -24,13 +24,6 @@ export default function Users({ auth, users }) {
     const handleRoleChange = (event) => {
         setData({ ...data, role: event.target.value });
     };
-
-    useEffect(() => {
-        console.log("auth");
-        if (auth.user && auth.user.role_id === 2) {
-            return Inertia.visit("/fotourgjente");
-        }
-    }, [auth]);
 
     useEffect(() => {
         return () => {

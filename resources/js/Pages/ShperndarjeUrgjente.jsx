@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
-import { Inertia } from "@inertiajs/inertia";
+
 
 export default function ShperndarjeUrgjente({ auth, users }) {
 
@@ -19,13 +19,6 @@ export default function ShperndarjeUrgjente({ auth, users }) {
         { id: 10, name: "Emma", age: 27, city: "Atlanta" },
         { id: 11, name: "Max", age: 38, city: "Dallas" }
     ]); 
-
-    useEffect(() => {
-        console.log("auth");
-        if (auth.user && auth.user.role_id === 2) {
-            return Inertia.visit("/fotourgjente");
-        }
-    }, [auth]);
    
     // // Function to toggle the dropdown open/closed
     const toggleDropdown = () => {
