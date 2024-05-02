@@ -6,8 +6,7 @@ import InputLabel from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm, router } from "@inertiajs/react";
-import { Inertia } from '@inertiajs/inertia';
-
+import { Inertia } from "@inertiajs/inertia";
 
 export default function Users({ auth, users }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -15,18 +14,29 @@ export default function Users({ auth, users }) {
         email: "",
         password: "",
         password_confirmation: "",
+        role: "",
     });
 
     // State to store the name of the registered user
     const [registeredName, setRegisteredName] = useState(null);
 
+    // Create a mapping of roles to IDs
+    // const roleMapping = {
+    //     admin: 1,
+    //     operator: 2,
+    // };
+
+    // Define your handleRoleChange function
+    const handleRoleChange = (event) => {
+        setData({ ...data, role: event.target.value });
+    };
+
     useEffect(() => {
-       console.log('auth');
+        console.log("auth");
         if (auth.user && auth.user.role_id === 2) {
-            return Inertia.visit('/fotourgjente');
+            return Inertia.visit("/fotourgjente");
         }
     }, [auth]);
-
 
     useEffect(() => {
         return () => {
@@ -154,6 +164,26 @@ export default function Users({ auth, users }) {
                                 message={errors.email}
                                 className="mt-2"
                             />
+                        </div>
+
+                        <div className="mb-4">
+                            <label
+                                htmlFor="role"
+                                className="block text-sm font-medium text-gray-700"
+                            >
+                               <InputLabel  value="Role" />
+                            </label>
+                            <select
+                                id="role"
+                                name="role"
+                                value={data.role}
+                                onChange={handleRoleChange}
+                                className="mt-1 p-2 border border-gray-300 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                            >
+                                <option value="">Percakto Rolin</option>
+                                <option value="admin">Admin</option>
+                                <option value="operator">Operator</option>
+                            </select>
                         </div>
 
                         <div className="mt-4">

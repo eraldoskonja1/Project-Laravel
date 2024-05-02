@@ -8,7 +8,6 @@ export default function FotoUrgjente({ auth }) {
     const toggleImageSize = () => {
         setIsImageExpanded(!isImageExpanded);
     };
-
     return (
         <AuthenticatedLayout user={auth.user}>
             <Head title="FotoUrgjente" />
@@ -30,18 +29,16 @@ export default function FotoUrgjente({ auth }) {
                     />
 
                     <div className="mb-4">
-                        <div
-                            className={`w-full rounded cursor-pointer ${
-                                isImageExpanded
-                                    ? "w-2/3 fixed top-0 left-0 right-0 bottom-0 z-50 object-contain bg-black"
-                                    : ""
-                            }`}
-                            onClick={toggleImageSize}
-                        >
+                        <div class="flex justify-center items-center">
                             <img
                                 src="/storage/Photo/150.png"
                                 alt="Placeholder"
-                                className="w-full rounded "
+                                className={`w-full rounded cursor-pointer ${
+                                    isImageExpanded
+                                        ? "fixed top-0 left 0 w-2/3 h-full z-0 object-contain bg-transparent"
+                                        : ""
+                                }`}
+                                onClick={toggleImageSize}
                             />
                         </div>
                     </div>
