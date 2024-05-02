@@ -19,7 +19,7 @@ Route::get('/fotourgjente', function () {
 })->middleware(['auth', 'verified'])->name('fotourgjente');
 
 Route::get('/shperndarjeurgjente', function () {
-    return Inertia::render('ShperndarjeUrgjente', ['users'=> User::all()]);
+    return Inertia::render('ShperndarjeUrgjente', ['users' => User::all()]);
 })->middleware(['auth', 'verified'])->name('shperndarjeurgjente');
 
 
@@ -34,7 +34,7 @@ Route::get('/fotonormale', function () {
 })->middleware(['auth', 'verified'])->name('fotonormale');
 
 Route::get('/shperndarjenormale', function () {
-    return Inertia::render('ShperndarjeNormale', ['users'=> User::all()]);
+    return Inertia::render('ShperndarjeNormale', ['users' => User::all()]);
 })->middleware(['auth', 'verified'])->name('shperndarjenormale');
 
 Route::get('/raportnormal', function () {
@@ -46,16 +46,16 @@ Route::get('/fototndryshe', function () {
 })->middleware(['auth', 'verified'])->name('fototndryshe');
 
 Route::get('/shperndarjendryshe', function () {
-    return Inertia::render('ShperndarjeNdryshe', ['users'=> User::all()]);
+    return Inertia::render('ShperndarjeNdryshe', ['users' => User::all()]);
 })->middleware(['auth', 'verified'])->name('shperndarjendryshe');
 
 Route::get('/fotorikontroll', function () {
     return Inertia::render('FotoRikontroll');
-})->middleware(['auth', 'verified'])->name('fotorikontroll');  
+})->middleware(['auth', 'verified'])->name('fotorikontroll');
 
 Route::get('/shperndarjerikontroll', function () {
-    return Inertia::render('ShperndarjeRikontroll', ['users'=> User::all()]);
-})->middleware(['auth', 'verified'])->name('shperndarjerikontroll'); 
+    return Inertia::render('ShperndarjeRikontroll', ['users' => User::all()]);
+})->middleware(['auth', 'verified'])->name('shperndarjerikontroll');
 
 
 
@@ -70,11 +70,10 @@ Route::get('/shperndarjerikontroll', function () {
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/users', 'edit')->name('users');
-    Route::get('/user/{id}','editUser')->name('users.edit'); 
-    Route::post('/user/{id}','updateUser')->name('users.update'); 
-    Route::delete('/user/{id}', 'deleteUser')->name('users.delete'); 
+    Route::get('/user/{id}', 'editUser')->name('users.edit');
+    Route::post('/user/{id}', 'updateUser')->name('users.update');
+    Route::delete('/user/{id}', 'deleteUser')->name('users.delete');
     Route::post('/newRegistry', 'newRegistry')->name('users.registry');
-
 })->middleware(['auth', 'verified']);
 
 
@@ -84,4 +83,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
