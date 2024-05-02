@@ -24,16 +24,16 @@ export default function Authenticated({ user, header, children, auth }) {
                                     F.Urgjente
                                 </NavLink>
 
-                                {auth && auth.user && auth.user.role_id !== 2 && (
-                                <NavLink
-                                    href={route("shperndarjeurgjente")}
-                                    active={route().current(
-                                        "shperndarjeurgjente"
-                                    )}
-                                    className="flex-grow"
-                                >
-                                    Sh.Urgjente
-                                </NavLink>
+                                {user && user.role_id !== 2 && (
+                                    <NavLink
+                                        href={route("shperndarjeurgjente")}
+                                        active={route().current(
+                                            "shperndarjeurgjente"
+                                        )}
+                                        className="flex-grow"
+                                    >
+                                        Sh.Urgjente
+                                    </NavLink>
                                 )}
 
                                 <NavLink
@@ -50,15 +50,15 @@ export default function Authenticated({ user, header, children, auth }) {
                                     F.Normale
                                 </NavLink>
 
-                                {auth && auth.user && auth.user.role_id !== 2 && (
-                                <NavLink
-                                    href={route("shperndarjenormale")}
-                                    active={route().current(
-                                        "shperndarjenormale"
-                                    )}
-                                >
-                                    Sh.Normale
-                                </NavLink>
+                                {user && user.role_id !== 2 && (
+                                    <NavLink
+                                        href={route("shperndarjenormale")}
+                                        active={route().current(
+                                            "shperndarjenormale"
+                                        )}
+                                    >
+                                        Sh.Normale
+                                    </NavLink>
                                 )}
 
                                 <NavLink
@@ -75,15 +75,15 @@ export default function Authenticated({ user, header, children, auth }) {
                                     F.Ndryshe
                                 </NavLink>
 
-                                {auth && auth.user && auth.user.role_id !== 2 && (
-                                <NavLink
-                                    href={route("shperndarjendryshe")}
-                                    active={route().current(
-                                        "shperndarjendryshe"
-                                    )}
-                                >
-                                    Sh.Ndryshe
-                                </NavLink>
+                                {user && user.role_id !== 2 && (
+                                    <NavLink
+                                        href={route("shperndarjendryshe")}
+                                        active={route().current(
+                                            "shperndarjendryshe"
+                                        )}
+                                    >
+                                        Sh.Ndryshe
+                                    </NavLink>
                                 )}
 
                                 <NavLink
@@ -93,18 +93,18 @@ export default function Authenticated({ user, header, children, auth }) {
                                     F.Rikontroll
                                 </NavLink>
 
-                                {auth && auth.user && auth.user.role_id !== 2 && (
-                                <NavLink
-                                    href={route("shperndarjerikontroll")}
-                                    active={route().current(
-                                        "shperndarjerikontroll"
-                                    )}
-                                >
-                                    Sh.Rikontroll
-                                </NavLink>
+                                {user && user.role_id !== 2 && (
+                                    <NavLink
+                                        href={route("shperndarjerikontroll")}
+                                        active={route().current(
+                                            "shperndarjerikontroll"
+                                        )}
+                                    >
+                                        Sh.Rikontroll
+                                    </NavLink>
                                 )}
 
-                                {auth && auth.user && auth.user.role_id !== 2 && (
+                                {user && user.role_id !== 2 && (
                                     <NavLink
                                         href={route("users")}
                                         active={route().current("users")}
