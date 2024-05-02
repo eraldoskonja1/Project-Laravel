@@ -83,10 +83,15 @@ class UserController extends Controller
             'password' => ['required', Rules\Password::defaults()],
         ]);
 
+        $roleMapping = [
+            'admin' => 1,
+            'operator' => 2,
+        ];
+        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'role_id' => 2,
+            'role_id' => $roleMapping[$request->role],
             'password' => Hash::make($request->password),
         ]);
 
