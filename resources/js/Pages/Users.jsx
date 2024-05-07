@@ -144,6 +144,12 @@ export default function Users({ auth, users }) {
                                 <option value="admin">Admin</option>
                                 <option value="operator">Operator</option>
                             </select>
+                            {errors.role && (
+        <InputError
+            message={errors.role}
+            className="mt-2"
+        />
+    )}
                         </div>
 
                         <div className="mt-4">

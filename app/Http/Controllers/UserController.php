@@ -53,7 +53,7 @@ class UserController extends Controller
         ]);
     }
 
-    public function editUser($id)
+    public function editUser($id, Request $request)
     {
         $user = User::find($id);
         return Inertia::render('User/Edit', [
@@ -88,6 +88,11 @@ class UserController extends Controller
             'operator' => 2,
         ];
         
+        if (!isset($request->role) || empty($roleMapping[$request->role])) {
+            // Return a validation error response if the role is not provided or invalid
+            return redirect()->back()->withErrors(['role' => 'Please select a valid role.']);
+        }
+
         $user = User::create([
             'name' => $request->name,
             // 'email' => $request->email,
