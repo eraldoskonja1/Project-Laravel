@@ -31,14 +31,14 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
+            'name' => 'required|string|unique:users|max:255',
+            // 'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-
+        
         $user = User::create([
             'name' => $request->name,
-            'email' => $request->email,
+            // 'email' => $request->email,
             'role_id' => 2,
             'password' => Hash::make($request->password),
         ]);
@@ -48,6 +48,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(route('fotourgjente', absolute: false));
+        
     }
     
 }

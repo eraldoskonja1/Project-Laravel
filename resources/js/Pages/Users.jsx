@@ -11,7 +11,6 @@ import { Head, Link, useForm, router } from "@inertiajs/react";
 export default function Users({ auth, users }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
-        email: "",
         password: "",
         password_confirmation: "",
         role: "",
@@ -56,10 +55,9 @@ export default function Users({ auth, users }) {
                         <table className="min-w-full bg-white border rounded-md">
                             <thead>
                                 <tr>
-                                    <th className="px-4 py-2">name</th>
-                                    <th className="px-4 py-2">email</th>
-                                    <th className="px-4 py-2">edit</th>
-                                    <th className="px-4 py-2">delete</th>
+                                    <th className="px-4 py-2">Perdoruesi</th>
+                                    <th className="px-4 py-2">Edit</th>
+                                    <th className="px-4 py-2">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,9 +65,6 @@ export default function Users({ auth, users }) {
                                     <tr key={user.id}>
                                         <td className="border px-4 py-2">
                                             {user.name}
-                                        </td>
-                                        <td className="border px-4 py-2">
-                                            {user.email}
                                         </td>
                                         <td className="border px-4 py-2">
                                             <button className="w-full sm:w-auto bg-yellow-500 text-white rounded-md px-3 py-1 text-sm">
@@ -110,7 +105,7 @@ export default function Users({ auth, users }) {
                             Krijo nje User te ri{" "}
                         </h2>
                         <div>
-                            <InputLabel htmlFor="name" value="Name" />
+                            <InputLabel htmlFor="name" value="Perdoruesi" />
 
                             <TextInput
                                 id="name"
@@ -127,28 +122,6 @@ export default function Users({ auth, users }) {
 
                             <InputError
                                 message={errors.name}
-                                className="mt-2"
-                            />
-                        </div>
-
-                        <div className="mt-4">
-                            <InputLabel htmlFor="email" value="Email" />
-
-                            <TextInput
-                                id="email"
-                                type="email"
-                                name="email"
-                                value={data.email}
-                                className="mt-1 block w-full"
-                                autoComplete="username"
-                                onChange={(e) =>
-                                    setData("email", e.target.value)
-                                }
-                                required
-                            />
-
-                            <InputError
-                                message={errors.email}
                                 className="mt-2"
                             />
                         </div>
