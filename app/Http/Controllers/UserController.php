@@ -64,7 +64,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->name = $request->name;
-        $user->email = $request->email;
+        // $user->email = $request->email;
         $user->password = $request->password;
         $user->update();
         return redirect()->route('users');
@@ -79,7 +79,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|lowercase|email|max:255|unique:' . User::class,
+            // 'email' => 'required|string|lowercase|email|max:255|unique:' . User::class,
             'password' => ['required', Rules\Password::defaults()],
         ]);
 
@@ -90,7 +90,7 @@ class UserController extends Controller
         
         $user = User::create([
             'name' => $request->name,
-            'email' => $request->email,
+            // 'email' => $request->email,
             'role_id' => $roleMapping[$request->role],
             'password' => Hash::make($request->password),
         ]);
