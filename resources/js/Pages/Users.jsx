@@ -29,6 +29,11 @@ export default function Users({ auth, users }) {
         };
     }, []);
 
+    const roleMapping = {
+        1: "Admin",
+        2: "Operator",
+    };
+
     const submit = (e) => {
         e.preventDefault();
 
@@ -55,6 +60,7 @@ export default function Users({ auth, users }) {
                             <thead>
                                 <tr>
                                     <th className="px-4 py-2">Perdoruesi</th>
+                                    <th className="px-4 py-2">Roli</th>
                                     <th className="px-4 py-2">Edit</th>
                                     <th className="px-4 py-2">Delete</th>
                                 </tr>
@@ -64,6 +70,9 @@ export default function Users({ auth, users }) {
                                     <tr key={user.id}>
                                         <td className="border px-4 py-2">
                                             {user.name}
+                                        </td>
+                                        <td className="border px-4 py-2">
+                                            {roleMapping[user.role_id]}
                                         </td>
                                         <td className="border px-4 py-2">
                                             <button className="w-full sm:w-auto bg-yellow-500 text-white rounded-md px-3 py-1 text-sm">

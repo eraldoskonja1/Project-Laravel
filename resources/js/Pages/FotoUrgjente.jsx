@@ -86,10 +86,10 @@ export default function FotoUrgjente({ auth }) {
                                 <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                                     korrekt-korrekt
                                 </button>
-                                <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                                <button className="bg-blue-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                                     korrekt-jokorrekt
                                 </button>
-                                <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+                                <button className="bg-blue-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
                                     korrekt- pa qarte
                                 </button>
                             </div>
@@ -99,10 +99,10 @@ export default function FotoUrgjente({ auth }) {
                                 Leximi NR matesit
                             </div>
                             <div className="grid grid-cols-3 gap-4">
-                                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                                <button className="bg-pink-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
                                     jokorrekt-korrekt
                                 </button>
-                                <button className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">
+                                <button className="bg-pink-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">
                                     jokorrekt-jokorrekt
                                 </button>
                                 <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
@@ -115,13 +115,13 @@ export default function FotoUrgjente({ auth }) {
                                 Leximi NR matesit
                             </div>
                             <div className="grid grid-cols-3 gap-4">
-                                <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
+                                <button className="bg-red-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
                                     pa qarte-korrekt
                                 </button>
-                                <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
+                                <button className="bg-red-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
                                     pa qarte-jokorrekt
                                 </button>
-                                <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
+                                <button className="bg-red-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
                                     pa qarte- pa qarte
                                 </button>
                             </div>
