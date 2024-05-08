@@ -7,7 +7,6 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm, router } from "@inertiajs/react";
 
-
 export default function Users({ auth, users }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
@@ -131,7 +130,7 @@ export default function Users({ auth, users }) {
                                 htmlFor="role"
                                 className="block text-sm font-medium text-gray-700"
                             >
-                               <InputLabel  value="Role" />
+                                <InputLabel value="Role" />
                             </label>
                             <select
                                 id="role"
@@ -145,11 +144,11 @@ export default function Users({ auth, users }) {
                                 <option value="operator">Operator</option>
                             </select>
                             {errors.role && (
-        <InputError
-            message={errors.role}
-            className="mt-2"
-        />
-    )}
+                                <InputError
+                                    message={errors.role}
+                                    className="mt-2"
+                                />
+                            )}
                         </div>
 
                         <div className="mt-4">

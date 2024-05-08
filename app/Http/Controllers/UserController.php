@@ -77,6 +77,12 @@ class UserController extends Controller
     }
     public function newRegistry(Request $request): RedirectResponse
     {
+
+        $existingUser = User::where('name', $request->name)->first();
+        if ($existingUser) {
+            return redirect()->back()->withErrors(['name' => 'User with this name already exists.']);
+        }
+        
         $request->validate([
             'name' => 'required|string|max:255',
             // 'email' => 'required|string|lowercase|email|max:255|unique:' . User::class,
@@ -87,7 +93,7 @@ class UserController extends Controller
             'admin' => 1,
             'operator' => 2,
         ];
-        
+
         if (!isset($request->role) || empty($roleMapping[$request->role])) {
             // Return a validation error response if the role is not provided or invalid
             return redirect()->back()->withErrors(['role' => 'Please select a valid role.']);
@@ -106,6 +112,6 @@ class UserController extends Controller
         return redirect(route('users'));
     }
 
-    
+
     // Other controller methods such as show(), edit(), update(), destroy(), etc.
 }
